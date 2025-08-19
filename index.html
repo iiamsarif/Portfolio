@@ -2,345 +2,669 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Sarif Mondal</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Sarif Mondal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-        body {
-            background: #f8f9fb;
-            color: #333;
-            line-height: 1.6;
-        }
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: #161b22;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
 
-        header h1 {
-            font-size: 22px;
-            color: #ff4d4d;
-        }
+    header h1 {
+      font-size: 22px;
+      color: #58a6ff;
+    }
 
-        nav {
-            display: flex;
-            transition: 0.4s ease-in-out;
-        }
+    nav {
+      display: flex;
+      transition: 0.4s ease-in-out;
+    }
 
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #e6edf3;
+      font-weight: 500;
+    }
 
-        nav a:hover {
-            color: #ff4d4d;
-        }
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 60px 80px;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero img {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #58a6ff;
+    }
+
+    .hero-content {
+      max-width: 500px;
+    }
+
+    .hero-content h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .hero-content p {
+      font-size: 16px;
+      color: #c9d1d9;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 28px;
+      border-radius: 25px;
+      border: 2px solid #58a6ff;
+      background: transparent;
+      color: #58a6ff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #58a6ff;
+      color: #fff;
+    }
+
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    section h3 {
+      font-size: 28px;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skill-card {
+      background: #161b22;
+      padding: 25px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .skill-card i {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #58a6ff;
+    }
+
+    .projects-grid,
+    .certificates-grid,
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .project-card,
+    .certificate-card,
+    .education-card {
+      background: #161b22;
+      padding: 25px;
+      border-radius: 14px;
+      transition: 0.3s;
+      text-align: left;
+      text-decoration: none;
+    }
+
+    .project-card img,
+    .certificate-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .project-card:hover,
+    .certificate-card:hover,
+    .education-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .project-card h4,
+    .certificate-card h4,
+    .education-card h4 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .project-card p,
+    .certificate-card p,
+    .education-card p {
+      font-size: 14px;
+      color: #c9d1d9;
+    }
+.project-card a{
+  text-decoration: none;
+  color: rgb(0, 102, 255);
+}
+    .experience {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .experience img {
+      width: 380px;
+      border-radius: 10px;
+    }
+
+    .extra-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #161b2200;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .extra-section img {
+      width: 280px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #0d1117;
+      color: #aaa;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer .icons a {
+      color: #58a6ff;
+      margin: 0 12px;
+      font-size: 22px;
+      transition: 0.3s;
+    }
+
+    footer .icons a:hover {
+      color: #fff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 2000;
+    }
+
+    @media screen and (max-width: 950px) {
+      nav {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 220px;
+        height: 100vh;
+        background: #161b22;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .experience {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .experience img {
+        width: 180px;
+        border-radius: 10px;
+      }
+
+      .extra-section {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
 
 
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            padding: 140px 20px 80px;
-        }
-
-        .hero img {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #ff4d4d;
-        }
-
-        .hero h2 {
-            font-size: 32px;
-            margin: 20px 0 10px;
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: auto;
-            font-size: 16px;
-            color: #555;
-        }
-
-        .hero .btn {
-            margin-top: 20px;
-            padding: 12px 28px;
-            border-radius: 25px;
-            border: 2px solid #ff4d4d;
-            background: transparent;
-            color: #ff4d4d;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .hero .btn:hover {
-            background: #ff4d4d;
-            color: #fff;
-        }
-
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        section h3 {
-            font-size: 28px;
-            margin-bottom: 30px;
-            color: #222;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .card {
-            padding: 20px;
-            border-radius: 16px;
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .card:hover {
-            transform: translateY(-6px);
-        }
-
-        .card i {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #ff4d4d;
-        }
-
-        .card h4 {
-            margin-bottom: 12px;
-            font-size: 20px;
-            color: #000;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #666;
-        }
-
-        footer {
-            background: #111;
-            color: #fff;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        footer .icons a {
-            color: #fff;
-            margin: 0 12px;
-            font-size: 22px;
-            transition: 0.3s;
-        }
-
-        footer .icons a:hover {
-            color: #ff4d4d;
-        }
 
 
-        .menu-toggle {
-            display: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: #333;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 2000;
-        }
+    #faq {
+  max-width: 800px;         /* keep it centered and not too wide */
+  margin: 40px auto;        /* center horizontally */
+  background-color: #2c2c2c00; /* dark gray box */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0);
+}
 
+#faq h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f3f3f3;           /* light gray heading */
+}
 
-        @media screen and (max-width: 750px) {
-            nav {
-                position: fixed;
-                top: 0;
-                right: -250px;
-                width: 220px;
-                height: 100vh;
-                background: #fff;
-                box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 20px;
-            }
+.faq-item {
+  background: #3a3a3a00;      /* slightly lighter gray for items */
+  margin-bottom: 10px;
+  border-radius: 6px;
+  padding: 15px;
+}
 
-            nav.active {
-                right: 0;
-            }
+.faq-item h4 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
 
-            .menu-toggle {
-                display: block;
-            }
-        }
-    </style>
+.faq-item p {
+  margin: 0;
+  color: #d1d1d1;           /* softer gray text */
+}
+  </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Portfolio</h1>
-        <i class="fas fa-bars menu-toggle" id="menu-toggle"></i>
-        <nav id="navbar">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#certificates">Certificates</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <h1>Portfolio</h1>
+    <i class="fas fa-bars menu-toggle" id="menu-toggle"></i>
+    <nav id="navbar">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <section class="hero" id="about">
-        <img src="Profile.jpeg" alt="Profile Photo">
-        <h2>Hi, I'm Sarif Mondal</h2>
-        <p>BCA Student | Web Developer | Passionate Full Stack Developer who has practical experience in creating dynamic
-            and responsive web applications as well as mobile applications.</p>
-        <a href="Resume_Sarif_Mondal_2025.pdf"><button class="btn">View Resume</button></a>
-    </section>
+  <section class="hero" id="about">
+    <div class="hero-content">
+      <h2>Hi, I'm Sarif Mondal</h2>
+      <p>BCA Student | Web Developer | Passionate Full Stack Developer who creates responsive and dynamic web and mobile
+        applications.</p>
+      <a href="Sarif_Mondal_Resume.pdf" ><button class="btn">View Resume</button></a>
+    </div>
+    <img src="Profile.jpeg" alt="Profile Photo">
+  </section>
 
-    <section id="skills">
-        <h3>Skills</h3>
-        <div class="grid">
-            <div class="card"><i class="fa-solid fa-code"></i>
-                <h4>Frontend</h4>
-                <p>HTML, CSS, JavaScript, AJAX, React, React Native</p>
-            </div>
-            <div class="card"><i class="fa-solid fa-server"></i>
-                <h4>Backend</h4>
-                <p>Node.js, Python, C#, PHP, Express.js</p>
-            </div>
-            <div class="card"><i class="fa-solid fa-database"></i>
-                <h4>Database</h4>
-                <p>MySQL, MongoDB</p>
-            </div>
-            <div class="card"><i class="fa-solid fa-cloud"></i>
-                <h4>Cloud & Tools</h4>
-                <p>GitHub, Render, Supabase, Aiven Space, Google Play Console</p>
-            </div>
-        </div>
-    </section>
+  <!-- Experience Section -->
+  <section id="experience">
+    <h3>Experience</h3>
+    <div class="experience">
+      <div>
+        <h4>Web Development Journey</h4>
+        <p>Usually I have been doing full-stack developmet for past two years. I have worked with various clients and
+          figured out real-world solutions by making web-applications. Now I'm building my own Business and focussing to
+          grow in market.</p>
+      </div>
+      <img
+        src="https://images.fastcompany.com/image/upload/f_webp,q_auto,c_fit/wp-cms-2/2025/06/p-1-91346159-what-is-vibe-coding-a-computer-scientist-explains-what-it-means-to-have-ai-write-computer-code-and-what-risks-that-can-entail.jpg"
+        alt="Coding Experience">
+    </div>
+  </section>
 
-    <section id="certificates">
-        <h3>Certificates</h3>
-        <div class="grid">
-            <a href="GenAiCertificate.pdf" class="card"><i class="fa-solid fa-certificate"></i>
-                <h4>IBM SkillBuild</h4>
-                <p>Use Generative AI for Software Development</p>
-            </a>
-            <a href="Web Development Certificate.pdf" class="card"><i class="fa-solid fa-certificate"></i>
-                <h4>IBM SkillBuild</h4>
-                <p>Web Development Basics</p>
-            </a>
-            <a href="Google_Play_Developer_Account.pdf" class="card"><i class="fa-solid fa-id-badge"></i>
-                <h4>Google Play Console</h4>
-                <p>Published App on Play Store</p>
-            </a>
-            <a href="Circuit_craft_certificate.pdf" class="card"><i class="fa-solid fa-trophy"></i>
-                <h4>Circuit Craft 2024</h4>
-                <p>Academic Event Participation</p>
-            </a>
-        </div>
-    </section>
+  <!-- Education Section -->
+  <section id="education">
+    <h3>Education</h3>
+    <div class="education-grid">
+      <div class="education-card">
+        <h4>Bachelor of Computer Applications (BCA)</h4>
+        <p><strong>Brainware University</strong> – 2023 to 2026</p>
+        <p>Focused on programming, web development, databases, and software engineering.</p>
+      </div>
+      <div class="education-card">
+        <h4>Higher Secondary Education (12th)</h4>
+        <p><strong>WBCHSE</strong> – 2023</p>
+        <p>Completed with 85% marks.</p>
+      </div>
+      <div class="education-card">
+        <h4>Secondary Education (10th)</h4>
+        <p><strong>WBBSE</strong> – 2021</p>
+        <p>Completed with 72% marks.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="projects">
-        <h3>Projects</h3>
-        <div class="grid">
-            <div class="card"><i class="fa-solid fa-globe"></i>
-                <h4>Skillinnovex AI Resume Builder</h4>
-                <p><a href="https://skillinnovex.onrender.com" target="_blank">Live Project</a></p>
-            </div>
-            <div class="card"><i class="fa-solid fa-link"></i>
-                <h4>Webn URL Shortener</h4>
-                <p><a href="https://webn.in" target="_blank">Live Project</a></p>
-            </div>
-            <div class="card"><i class="fa-solid fa-store"></i>
-                <h4>APIC E-commerce Prototype WordPress</h4>
-                <p><a href="https://neonshope.wordpress.com/" target="_blank">Live Project</a></p>
-            </div>
-            <div class="card"><i class="fa-solid fa-database"></i>
-                <h4>HeyChat temporary chat app</h4>
-                <p><a href="https://heychatapp.onrender.com/" target="_blank">Live Project</a></p>
-            </div>
-            <div class="card"><i class="fa-solid fa-database"></i>
-                <h4>Martian Bank</h4>
-                <p><a href="https://martian-bank.onrender.com/" target="_blank">Banking System</a></p>
-            </div>
-            <div class="card"><i class="fa-solid fa-space-shuttle"></i>
-                <h4>Universe WavesX</h4>
-                <p><a href="https://universewavesx.org/" target="_blank">Static Website</a></p>
-            </div>
-            <div class="card"><i class="fa-solid fa-rocket"></i>
-                <h4>Atom Atmosphere</h4>
-                <p><a href="https://atomatmosphere.com/" target="_blank">Static Website</a></p>
-            </div>
-            <div class="card"><i class="fa-brands fa-youtube"></i>
-                <h4>YouTube Thumbnail Downloader</h4>
-                <p><a href="https://iiamsarif.github.io/Ytdownloader/" target="_blank">GitHub Page</a></p>
-            </div>
-            <div class="card"><i class="fa-solid fa-mobile"></i>
-                <h4>Skyvector Spy App</h4>
-                <p><a href="https://skyvector.onrender.com/" target="_blank">Play Store & Web</a></p>
-            </div>
-        </div>
-    </section>
+  <section id="skills">
+    <h3>Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fab fa-html5"></i>
+        <h4>HTML</h4>
+      </div>
+      <div class="skill-card"><i class="fab fa-css3-alt"></i>
+        <h4>CSS</h4>
+      </div>
+      <div class="skill-card"><i class="fab fa-js"></i>
+        <h4>JavaScript</h4>
+      </div>
+      <div class="skill-card"><i class="fab fa-react"></i>
+        <h4>React / React Native</h4>
+      </div>
+      <div class="skill-card"><i class="fab fa-node-js"></i>
+        <h4>Node.js</h4>
+      </div>
+      <div class="skill-card"><i class="fa-solid fa-database"></i>
+        <h4>MySQL / MongoDB</h4>
+      </div>
+      <div class="skill-card"><i class="fa-solid fa-cloud"></i>
+        <h4>Render / Supabase</h4>
+      </div>
+      <div class="skill-card"><i class="fab fa-github"></i>
+        <h4>GitHub</h4>
+      </div>
+      <div class="skill-card"><i class="fa-brands fa-php"></i>
+  <h4>PHP</h4>
+</div>
 
-    <footer id="contact">
-        <p>Connect with me</p>
-        <div class="icons">
-            <a href="https://github.com/iiamsarif" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/iiamsarif" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://instagram.com/iiamsarif" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p style="margin-top:15px; font-size:14px; color:#aaa;">© 2025 Sarif Mondal - All Rights Reserved</p>
-    </footer>
-    <script>
-        const toggle = document.getElementById("menu-toggle");
-        const navbar = document.getElementById("navbar");
+<div class="skill-card"><i class="fa-solid fa-c"></i>
+  <h4>C</h4>
+</div>
 
-        toggle.addEventListener("click", () => {
-            navbar.classList.toggle("active");
+<div class="skill-card"><i class="fa-solid fa-code"></i>
+  <h4>C#</h4>
+</div>
 
-            // Swap hamburger and cross icon
-            if (navbar.classList.contains("active")) {
-                toggle.classList.remove("fa-bars");
-                toggle.classList.add("fa-times");
-            } else {
-                toggle.classList.remove("fa-times");
-                toggle.classList.add("fa-bars");
-            }
-        });
-    </script>
+<div class="skill-card"><i class="fa-brands fa-python"></i>
+  <h4>Python</h4>
+</div>
+
+<div class="skill-card"><i class="fa-brands fa-android"></i>
+  <h4>Android App Development</h4>
+</div>
+
+<div class="skill-card"><i class="fa-solid fa-code"></i>
+  <h4>C++</h4>
+</div>
+
+<div class="skill-card"><i class="fa-brands fa-google-play"></i>
+  <h4>Play Store</h4>
+</div>
+
+<div class="skill-card"><i class="fa-solid fa-magnifying-glass"></i>
+  <h4>SEO</h4>
+</div>
+    </div>
+    <div class="extra-section">
+      <p>Usually I work with these technologies and build many of web applications. The technologies are here you see
+        that I learned from youtube and online courses platforms. I have started with html and now I have reached so
+        far, So it's not only about learning technologies but a long journey of transformation and self improvement.
+      </p>
+      <img src="https://img.freepik.com/premium-photo/tech-trendsetters-finance_636537-108634.jpg"
+        alt="Skills Illustration">
+    </div>
+  </section>
+
+  <section id="projects">
+    <h3>Projects</h3>
+    <div class="projects-grid">
+
+      <!-- AI Resume Builder -->
+      <div class="project-card">
+        <img src="six.jpeg" alt="AI Resume Builder">
+        <h4>Skillinnovex AI Resume Builder (Personal)</h4>
+        <p>AI-powered resume builder using Gemma:2B model with unlimited resume generation feature. Created using Node
+          JS, Html, CSS, JavaScript, MySQL and Gemma:2b AI model.</p>
+        <a href="https://skillinnovex.onrender.com" target="_blank">🔗 Live Project</a>
+      </div>
+
+      <!-- URL Shortener -->
+      <div class="project-card">
+        <img src="webn.png" alt="Custom URL Shortener">
+        <h4>Webn Custom URL Shortener (Personal)</h4>
+        <p>Custom shortener built with Node.js + MySQL with clicks analytics dashboard. Uploaded on Google Search Engine
+          and monetized by Ads.</p>
+        <a href="https://webn.in" target="_blank">🔗 Live Project</a>
+      </div>
+
+      <!-- E-commerce Prototype -->
+      <div class="project-card">
+        <img src="neo.png" alt="Ecommerce Prototype">
+        <h4>E-commerce Prototype (APIC Collage Client)</h4>
+        <p>WordPress-based prototype e-commerce website with product catalog.</p>
+        <a href="https://neonshope.wordpress.com/" target="_blank">🔗 Live Project</a>
+      </div>
+      <!-- Arien Space -->
+      <div class="project-card">
+        <img src="aspace.png" alt="Arien Space Website">
+        <h4>Arien Space (Local Client)</h4>
+        <p>Responsive website showcasing space science discoveries and leadership content.</p>
+        <a href="https://arienspace.com" target="_blank">🔗 Live Project</a>
+      </div>
+      <div class="project-card">
+        <img src="uwx.png" alt="Universe WavesX Website">
+        <h4>Universe WavesX (Local Client)</h4>
+        <p>Space website that contains informations, missions, discoveries and many more about space.</p>
+        <a href="https://universewavesx.org/" target="_blank">🔗 Live Project</a>
+      </div>
+      <div class="project-card">
+        <img src="atom.png" alt="Atom Atmosphere Website">
+        <h4>
+          Atom Atmosphere (Local Client)</h4>
+        <p>Same website as arien space which was made for the same client.</p>
+        <a href="https://atomatmosphere.com/" target="_blank">🔗 Live Project</a>
+      </div>
+      <!-- HeyChat App -->
+      <div class="project-card">
+        <img src="hey.png" alt="HeyChat App">
+        <h4>HeyChat App (Personal)</h4>
+        <p>Temporary real-time chat app built using Node.js + JSON based.</p>
+        <a href="https://heychatapp.onrender.com/" target="_blank">🔗 Live Project</a>
+      </div>
+
+      <!-- YouTube Thumbnail Downloader -->
+      <div class="project-card">
+        <img src="ytd.png" alt="YouTube Thumbnail Downloader">
+        <h4>YouTube Thumbnail Downloader (Personal)</h4>
+        <p>Web app that fetches and downloads YouTube video thumbnails by using youtubes public api.</p>
+        <a href="https://iiamsarif.github.io/Ytdownloader/" target="_blank">🔗 Live Project</a>
+      </div>
+
+      <!-- Barclays Bank -->
+      <div class="project-card">
+        <img src="mb.png" alt="Banking System">
+        <h4>Martian Bank (Local Client)</h4>
+        <p>Banking prototype with account creation, balance check, and payments built in Node.js.</p>
+        <a href="https://martian-bank.onrender.com/" target="_blank">🔗 Live Project</a>
+      </div>
+
+      <div class="project-card">
+        <img src="sv.png" alt="Skyvector">
+        <h4>Skyvector Spy App (Local Client)</h4>
+        <p>A spy tools app that created using React Native and WebView with Node Js, Html CSS, JavaScript.</p>
+        <a href="https://skyvector.onrender.com/" target="_blank">🔗 Live Project</a>
+      </div>
+
+    </div>
+
+    <div class="extra-section">
+      <p>It all began with Registering a project with the name The Arien Space in January 2024 and
+        securing my first client there. This was the start of a new and exciting thing to me. Gradually, I was able to
+        learn, enhance my abilities and deliver on bigger projects to the client like Universewaves-X, Atom-Atmosphere.
+        The way I feel on December 2025 is that I am
+        glad to announce I have completed projects of international clients with excellent experience with growth and
+        learning. As of now, I'm consistently working hard until I become the top guy of this field.</p>
+
+    </div>
+  </section>
+
+  <section id="certificates">
+    <h3>Certificates</h3>
+    <div class="certificates-grid">
+      <a href="GenAiCertificate.pdf" class="certificate-card">
+        <img src="genaic.png" alt="IBM Gen AI Certificate">
+        <h4>Use Generative AI for Software Development</h4>
+        <p>Issued by IBM SkillBuild</p>
+      </a>
+      <a href="Web Development Certificate.pdf" class="certificate-card">
+        <img src="webbc.png" alt="IBM Web Dev Certificate">
+        <h4>Web Development Basics</h4>
+        <p>Issued by IBM SkillBuild</p>
+      </a>
+      <a href="Circuit_craft_certificate.pdf" class="certificate-card">
+        <img src="bwu.png" alt="Circuit Craft">
+        <h4>Circuit Craft 2024</h4>
+        <p>Academic Achievement</p>
+      </a>
+      <a href="Google_Play_Developer_Account.pdf" class="certificate-card">
+        <img src="gdev.png" alt="Google Play Console">
+        <h4>Google Play Console Developer</h4>
+        <p>Developer Account Certificate</p>
+      </a>
+    </div>
+
+  </section>
+
+  <section id="faq">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq">
+      <div class="faq-item">
+        <h4>What technologies do you specialize in?  </h4>
+        <p>I specialize in full-stack web development using React, Node.js, MySQL, MongoDB, and AI tools like Hugging
+          face Apis.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you work on freelance projects?  </h4>
+        <p>Yes, I am open to freelance opportunities in web development, AI-driven and Mobile applications.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Tell me about a time you solved a bug </h4>
+        <p>Once while working on a full stack project, I had implemented a login and signup system using Node.js and
+          MySql.
+          Once have made a dynamic website with login authentication system but I was using a simple logic to store user
+          email in a variable and user can route between multiple pages after login but It was not good for production
+          So I researched about multiple method to build a good authentication system and after I have figured out a
+          solution is called session storage where i can track user browser cookie using session and keep user logged in
+          safely so this was the bug I have solved and I have learned a lot of this and grew up my skill.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h4>Where can I see your live projects?  </h4>
+        <p>All my live projects are linked in the portfolio section above.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How can I contact you?  </h4>
+        <p>You can reach me via LinkedIn, GitHub, or the social media links below.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>Connect with me</p>
+    <div class="icons">
+      <a href="https://github.com/iiamsarif" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/sarif-mondal-62b962239" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com/iiamsarif" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p style="margin-top:15px; font-size:14px;">© 2025 Sarif Mondal - All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
+
+    toggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+
+      if (navbar.classList.contains("active")) {
+        toggle.classList.remove("fa-bars");
+        toggle.classList.add("fa-times");
+      } else {
+        toggle.classList.remove("fa-times");
+        toggle.classList.add("fa-bars");
+      }
+    });
+
+
+    document.querySelectorAll(".faq-item").forEach(item => {
+      item.addEventListener("click", () => {
+        const p = item.querySelector("p");
+        const icon = item.querySelector("i");
+
+        if (p.style.display === "block") {
+          p.style.display = "none";
+          icon.classList.replace("fa-minus", "fa-plus");
+        } else {
+          p.style.display = "block";
+          icon.classList.replace("fa-plus", "fa-minus");
+        }
+      });
+    });
+  </script>
 
 </body>
 
